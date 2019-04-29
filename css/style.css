@@ -134,3 +134,36 @@ input {
   box-sizing: border-box;
   width: 100px;
 }
+
+#mainImage {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#mainImage img {
+  vertical-align: bottom;
+}
+
+#imageList ul {
+  margin: 10px;
+  padding: 0;
+  overflow: hidden;
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#imageList li {
+  float: left;
+  list-style-type: none;
+}
+
+#imageList li img {
+  width: 50px;
+  height: 50px;
+  padding-left: 1px;
+  padding-right: 1px;
+  box-sizing: border-box;
+  vertical-align: bottom;
+}
