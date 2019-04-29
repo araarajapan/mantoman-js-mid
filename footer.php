@@ -54,6 +54,54 @@
     /* task3 画像切り替え */
     //============================
 
+    //リロードしたら実行
+    var imageList = randomArray();
+
+    $('#mainImage img').attr('src', imageList[0]);
+    $('#imageList .js-img1 img').attr('src', imageList[0]);
+    $('#imageList .js-img2 img').attr('src', imageList[1]);
+    $('#imageList .js-img3 img').attr('src', imageList[2]);
+    $('#imageList .js-img4 img').attr('src', imageList[3]);
+    $('#imageList .js-img5 img').attr('src', imageList[4]);
+
+    function randomArray() {
+
+      //この中からランダムでn枚取り出す
+      var imageList = [ //画像を格納
+        'img/pic1.jpg',
+        'img/pic2.jpg',
+        'img/pic3.jpg',
+        'img/pic4.jpg',
+        'img/pic5.jpg',
+        'img/pic6.jpg',
+        'img/pic7.jpg',
+        'img/pic8.jpg',
+        'img/pic9.jpg',
+        'img/pic10.jpg',
+        'img/pic11.jpg',
+        'img/pic12.jpg',
+        'img/pic13.jpg',
+        'img/pic14.jpg',
+        'img/pic15.jpg'
+      ]
+
+      var listNum = imageList.length; //画像が入った配列の要素数
+
+      while (listNum) { //TRUEである限り続く = カウントがデクリメントされて0になったら終了
+        var i = Math.floor(Math.random() * listNum); //要素数の乱数をiに獲得
+        var str = imageList[--listNum]; //要素数-1 一番最後の要素をstrに入れる
+        imageList[listNum] = imageList[i]; //乱数で取り出された要素を配列の最後に入れ直す
+        imageList[i] = str; //strを乱数で指定された位置に入れる
+      }
+
+      return imageList;
+    }
+
+    //写真hover時にメイン箇所に表示させる
+    $("#imageList img").hover(function() {
+      $('#mainImage img').attr('src', $(this).attr('src'))
+    })
+
     //============================
     /* task4 txtファイル変換 */
     //============================
