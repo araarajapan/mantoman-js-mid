@@ -1,4 +1,4 @@
-  <!-- ヘッダー -->
+<body>
   <div class="header">
     <div class="header-inner">
       <!-- タイトル -->
