@@ -64,29 +64,19 @@
       12: 31,
     };
 
-    // $option = $('<option>')
-    //     .val(value)
-    //     .text(name)
-    //     .prop('selected', isSelected);
-
     $("#js-manth-button").on("click", function() {
 
       for (var key in dayReturn) {
-
         $('#js-manth-select').append($('<option>').val(key).text(key + '月の日数を調べる'));
       }
 
     });
 
 
-
-
     $("#js-manth-select").on("change", function() {
-      // var manth_select = $("#js-manth-select").val();
-      // alert(dayReturn[manth_select]);
 
-      var test = 2;
-      alert(dayReturn[test] + '日までです!');
+      var key = $(this).val();
+      alert(dayReturn[key] + '日までです!');
 
     });
 
