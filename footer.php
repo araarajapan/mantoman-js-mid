@@ -49,6 +49,47 @@
     //============================
     /* task2 月別日数検索 */
     //============================
+    var dayReturn = {
+      1: 31,
+      2: 30,
+      3: 31,
+      4: 30,
+      5: 31,
+      6: 30,
+      7: 31,
+      8: 31,
+      9: 30,
+      10: 31,
+      11: 30,
+      12: 31,
+    };
+
+    // $option = $('<option>')
+    //     .val(value)
+    //     .text(name)
+    //     .prop('selected', isSelected);
+
+    $("#js-manth-button").on("click", function() {
+
+      for (var key in dayReturn) {
+
+        $('#js-manth-select').append($('<option>').val(key).text(key + '月の日数を調べる'));
+      }
+
+    });
+
+
+
+
+    $("#js-manth-select").on("change", function() {
+      // var manth_select = $("#js-manth-select").val();
+      // alert(dayReturn[manth_select]);
+
+      var test = 2;
+      alert(dayReturn[test] + '日までです!');
+
+    });
+
 
     //============================
     /* task3 画像切り替え */
