@@ -70,6 +70,8 @@
         $('#js-manth-select').append($('<option>').val(key).text(key + '月の日数を調べる'));
       }
 
+      $(this).addClass('hide');
+      $("#js-manth-select").removeClass('hide');
     });
 
 

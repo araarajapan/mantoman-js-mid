@@ -12,7 +12,7 @@
 
 <!-- メイン -->
 <div class="main">
-  <select id="js-manth-select"></select>
+  <select id="js-manth-select" class='hide'></select>
   <input type="submit" id="js-manth-button" value="ボタン">
 </div>
 <!-- footer -->

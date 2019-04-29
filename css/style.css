@@ -8,6 +8,10 @@ input {
   padding: 0;
 }
 
+.hide {
+  display: none;
+}
+
 /* サイト名 */
 .site h1 a {
   color: #000000;
