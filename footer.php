@@ -139,6 +139,48 @@
     /* task4 txtファイル変換 */
     //============================
 
+    //js版
+    // var form = document.forms.myform;
+    // form.myfile.addEventListener('change', function(e) {
+    //   var result = e.target.files[0];//.filesで取得したfileListの[0]←fileをいきなり入れてる
+    //   console.log(result);
+
+    //FileReaderのインスタンスを作成する
+    // var reader = new FileReader();
+
+    // reader.readAsText(result); //ファイルリーダーにファイルを読み込ませる
+
+    //   reader.addEventListener("load", function() {
+    //     console.log(reader.result);
+    //     form.output.textContent = reader.result;
+    //   });
+    // })
+
+    //jQuery版
+    $("#js-text-file").on("change", function(e) {
+      // var file = e.target.files;//下と同義
+      var file = $(this)[0].files;
+      //$(this)の先頭に入ってるオブジェクトには複数のオブジェクトが入っていて、
+      //filesプロパティにはFileListが入ってる
+      //さらに
+      //FileListオブジェクトにはfileというファイル情報を含んだオブジェクトが入ってる
+      // →$(this)[0].filesは
+      //  input[type="file"]に渡したファイル情報が入った
+      //  FileListオブジェクトを参照している
+
+      console.log(file);
+
+      var reader = new FileReader(); //FileListオブジェクト内のfileを読み込むインスタンス
+
+      reader.readAsText(file[0]); //FileListオブジェクトの先頭に入ってるfileを指定
+
+      reader.onload = function() { //読み込みが完了したら
+        console.log(reader.result);
+        $("#js-text-view").text(reader.result);
+      }
+
+    })
+
     //============================
     /* task5 ウェザーニュース */
     //============================
