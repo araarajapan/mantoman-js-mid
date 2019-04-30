@@ -142,6 +142,26 @@
     //============================
     /* task5 ウェザーニュース */
     //============================
+    $("#js-city-select").on("change", function() {
+
+      var city = $(this).val();
+      console.log(city);
+
+      $.ajax({
+        type: "get",
+        url: "http://weather.livedoor.com/forecast/webservice/json/v1",
+        dataType: "jsonp",
+        data: {
+          city: '130010'
+        }
+      }).done(function(rst) {
+        console.log(rst);
+      });
+
+
+    })
+
+
   });
 </script>
 </body>
