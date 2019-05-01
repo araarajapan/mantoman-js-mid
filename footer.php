@@ -144,20 +144,24 @@
     //============================
     $("#js-city-select").on("change", function() {
 
-      var city = $(this).val();
-      console.log(city);
+      console.log($(this));
+      var cityNum = $(this).val();
+      var cityText = $(this).children('option:selected').text();
+      console.log(cityNum);
+      console.log(cityText);
 
       $.ajax({
-        type: "get",
-        url: "http://weather.livedoor.com/forecast/webservice/json/v1",
-        dataType: "jsonp",
+        type: "post",
+        url: "ajax.php",
+        dataType: "json",
         data: {
-          city: '130010'
+          city: cityNum
         }
       }).done(function(rst) {
-        console.log(rst);
+        console.log(rst['forecasts'][0]['telop']);
+        var weatherRst = rst['forecasts'][0]['telop'];
+        alert(cityText + "の明日の天気は" + weatherRst + "です");
       });
-
 
     })
 
