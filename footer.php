@@ -184,6 +184,30 @@
     //============================
     /* task5 ウェザーニュース */
     //============================
+    $("#js-city-select").on("change", function() {
+
+      console.log($(this));
+      var cityNum = $(this).val();
+      var cityText = $(this).children('option:selected').text();
+      console.log(cityNum);
+      console.log(cityText);
+
+      $.ajax({
+        type: "post",
+        url: "ajax.php",
+        dataType: "json",
+        data: {
+          city: cityNum
+        }
+      }).done(function(rst) {
+        console.log(rst['forecasts'][0]['telop']);
+        var weatherRst = rst['forecasts'][0]['telop'];
+        alert(cityText + "の明日の天気は" + weatherRst + "です");
+      });
+
+    })
+
+
   });
 </script>
 </body>
